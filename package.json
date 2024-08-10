@@ -1,0 +1,25 @@
+{
+  "name": "multi-step-form",
+  "version": "1.0.0",
+  "description": "forms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch scss/style.scss:dist/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Salma-3/multi-step-form.git"
+  },
+  "keywords": [
+    "forms",
+    "html",
+    "css"
+  ],
+  "author": "Salma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Salma-3/multi-step-form/issues"
+  },
+  "homepage": "https://github.com/Salma-3/multi-step-form#readme"
+}
