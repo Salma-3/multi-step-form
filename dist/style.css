@@ -26,7 +26,7 @@ main {
 .side {
   width: 30%;
   padding: 2rem;
-  background: url("/img/bg-sidebar-desktop.svg") no-repeat center;
+  background: url("~/img/bg-sidebar-desktop.svg") no-repeat center;
   background-size: cover;
   border-radius: 10px;
 }
@@ -361,7 +361,7 @@ main {
     height: 100%;
   }
   .side {
-    background: url("/img/bg-sidebar-mobile.svg") no-repeat center/cover;
+    background: url("~/img/bg-sidebar-mobile.svg") no-repeat center/cover;
     width: 100%;
     border-radius: 0;
     position: fixed;
