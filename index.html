@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +10,10 @@
     <link rel="stylesheet" href="dist/style.css">
     <title>Frontend Mentor | Multi-step Form</title>
 </head>
+
 <body>
     <main>
-        <div class="wrap">
+        <div class="desktop-wrap">
             <!-- side menu -->
             <div class="side">
                 <div class="steps-list">
@@ -23,7 +25,7 @@
                         </div>
                     </div>
                     <div class="step-item">
-                        <div class="number active">2</div>
+                        <div class="number">2</div>
                         <div class="text">
                             <div class="gray">Step 2</div>
                             <div class="step-name">Select plan</div>
@@ -48,104 +50,107 @@
             <!-- side menu end -->
             <!-- form side -->
             <div class="form-wrap">
-                
-                <form id="form">
-                    <!-- personal -->
-                    <div class="step hidden" id="personalInput">
-                        <h2 class="step-heading">Personal info</h2>
-                        <p class="step-text">Please provide your name, email address, and phone number</p>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <span class="error"></span>
-                            <input type="text" name="name" id="name" placeholder="Full name" class="" />
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <span class="error"></span>
-                            <input type="text" name="email" id="email" placeholder="example@mail.com" />
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <span class="error"></span>
-                            <input type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890"/>
-                        </div>
+                <div class="form">
+                    <form id="form">
+                        <!-- personal -->
+                        <div class="step" id="personalInput">
+                            <h2 class="step-heading">Personal info</h2>
+                            <p class="step-text">Please provide your name, email address, and phone number</p>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" placeholder="Full name" class="" />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="text" name="email" id="email" placeholder="example@mail.com" />
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890" />
+                            </div>
 
-                        <div class="buttons-wrap">
-                            <button type="button" class="next-step"></button>
+                            <div class="buttons-wrap justify-end">
+                                <button type="button" class="next-step">Next Step</button>
+                            </div>
                         </div>
-                    </div>
-                    <!-- personal end -->
-                    <!-- Plans -->
-                    <div class="step hidden" id="plansInput" class="">
-                        <h2 class="step-heading">Select Plan</h2>
-                        <p class="step-text">You have the option of monthly of yearly billing</p>
-                        <div class="radio-group">
-                            <div>
-                                <input type="radio" name="plan" id="acrade" value="acrade"/>
-                                <label for="acrade">
-                                    <div class="radio-item">
-                                        <img src="img/icon-arcade.svg" alt="arcade"/>
-                                        <div>
-                                            <h6>Arcade</h6>
-                                            <span>$9/mo</span>
+                        <!-- personal end -->
+                        <!-- Plans -->
+                        <div class="step" id="plansInput" class="">
+                            <h2 class="step-heading">Select Plan</h2>
+                            <p class="step-text">You have the option of monthly of yearly billing</p>
+                            <div class="radio-group">
+                                <div class="radio-group-item">
+                                    <input type="radio" name="plan" id="acrade" value="acrade" />
+                                    <label for="acrade">
+                                        <div class="radio-item">
+                                            <img src="img/icon-arcade.svg" alt="arcade" />
+                                            <div>
+                                                <h6>Arcade</h6>
+                                                <span class="plan-price">$9/mo</span>
+                                                <div class="free-triel hidden">2 months free</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    
-                                </label>
-                            </div>
-                            <div>
-                                <input type="radio" name="plan" id="advanced" value="advanced"/>
-                                <label for="advanced">
-                                    <div class="radio-item">
-                                        <img src="img/icon-advanced.svg" alt="advanced"/>
-                                        <div>
-                                            <h6>Advanced</h6>
-                                            <span>$12/mo</span>
-                                        </div>  
-                                    </div>
-                                </label>
-                            </div>
-                            <div>
-                                <input type="radio" name="plan" id="pro" value="pro"/>
-                                <label for="pro">
-                                    <div class="radio-item">
-                                        <img src="img/icon-pro.svg" alt="arcade"/>
-                                        <div>
-                                            <h6>Pro</h6>
-                                            <span>$15/mo</span>
-                                        </div>   
-                                    </div>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="switch-group">
-                            <div>Monthly</div>
-                            <input type="checkbox" name="term" id="switch" />
-                            <label for="switch" class="slider">
-                                <span class="slider-inner"></span>
-                            </label>
-                            <div>Yearly</div>
-                        </div>
-                        <div class="buttons-wrap">
-                            <button type="button" class="go-back">Go Back</button>
-                            <button class="next-step" type="button">Next Step</button>
-                        </div>
-                    </div>
 
-                    <!-- plans end  -->
-                    <!-- add-ons  -->
+                                    </label>
+                                </div>
+                                <div class="radio-group-item">
+                                    <input type="radio" name="plan" id="advanced" value="advanced" />
+                                    <label for="advanced">
+                                        <div class="radio-item">
+                                            <img src="img/icon-advanced.svg" alt="advanced" />
+                                            <div>
+                                                <h6>Advanced</h6>
+                                                <span class="plan-price">$12/mo</span>
+                                                <div class="free-triel hidden">2 months free</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="radio-group-item">
+                                    <input type="radio" name="plan" id="pro" value="pro" />
+                                    <label for="pro">
+                                        <div class="radio-item">
+                                            <img src="img/icon-pro.svg" alt="arcade" />
+                                            <div>
+                                                <h6>Pro</h6>
+                                                <span class="plan-price">$15/mo</span>
+                                                <div class="free-triel hidden">2 months free</div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="switch-group">
+                                <input type="checkbox" name="term" id="switch" value="yearly"  />
+                                <label for="switch">
+                                    <span class="switch-text monthly">Monthly</span>
+                                   <span class="switch-inner"></span>
+                                   <span class="switch-slider">
+                                    <span class="switch-slider-inner"></span>
+                                   </span>
+                                   <span class="switch-text yearly">Yearly</span>
+                                </label>
+                            </div>
+                            <div class="buttons-wrap justify-between">
+                                <button type="button" class="go-back">Go Back</button>
+                                <button class="next-step" type="button">Next Step</button>
+                            </div>
+                        </div>
 
-                    <div class="step hidden" id="addonsInput">
-                        <h2 class="step-heading">Pick add-ons</h2>
-                        <p class="step-text">add-ons help enhence your gaming experience</p>
-                        <div class="check-group">
+                        <!-- plans end  -->
+                        <!-- add-ons  -->
+
+                        <div class="step" id="addonsInput">
+                            <h2 class="step-heading">Pick add-ons</h2>
+                            <p class="step-text">add-ons help enhence your gaming experience</p>
+                            <div class="check-group">
                                 <label class="check-item" for="onlineService">
                                     <input type="checkbox" id="onlineService" name="addons" value="onlineService" />
                                     <div>
                                         <h6>Online service</h6>
                                         <span class="desc">Access to multiplayer games</span>
                                     </div>
-                                    <div class="price">
+                                    <div class="price add-price">
                                         +$1/mo
                                     </div>
                                 </label>
@@ -155,79 +160,84 @@
                                         <h6>Larger storage</h6>
                                         <span class="desc">Extra 1TB of cloud save</span>
                                     </div>
-                                    <div class="price">
+                                    <div class="price add-price">
                                         +$2/mo
                                     </div>
                                 </label>
                                 <label class="check-item" for="customProfile">
-                                    <input type="checkbox" id="customProfile" name="addons" value="customProfile" />
+                                    <input type="checkbox" id="customizableProfile" name="addons" value="customizableProfile" />
                                     <div>
                                         <h6>Customizable Profile</h6>
                                         <span class="desc">Custom theme on your profile</span>
                                     </div>
-                                    <div class="price">
+                                    <div class="price add-price">
                                         +$2/mo
                                     </div>
                                 </label>
+                            </div>
+                            <div class="buttons-wrap justify-between">
+                                <button type="button" class="go-back">Go Back</button>
+                                <button class="next-step" type="button">Next Step</button>
+                            </div>
                         </div>
-                        <div class="buttons-wrap">
-                            <button type="button" class="go-back">Go Back</button>
-                            <button class="next-step" type="button">Next Step</button>
+
+                        <div class="step" id="summery">
+                            <h2 class="step-heading">Finish up</h2>
+                            <p class="step-text">Double-check everything looks OK before confirming</p>
+
+                            <!-- <div class="summery-details">
+                                <div class="plan">
+                                    <div class="name" id="chosenPlanName">
+                                        Acrade (Monthly)
+                                        <br /><a href="#">Change</a>
+                                    </div>
+                                    <div class="price" id="chosenPlanPrice">
+                                        $9/mo
+                                    </div>
+                                </div>
+                                <div class="addons-item">
+                                    <div class="addons-name">
+                                        Online service
+                                    </div>
+                                    <div class="addons-price">
+                                        +$1/mo
+                                    </div>
+                                </div>
+                                <div class="addons-item">
+                                    <div class="addons-name">
+                                        Large Storage
+                                    </div>
+                                    <div class="addons-price">
+                                        +$2/mo
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- <div class="summery-total">
+                                <div class="leading">Total <span>(per month)</span></div>
+                                <div id="totalPrice" class="total-price">+$12/mo</div>
+                            </div> -->
+                            <div class="buttons-wrap justify-between">
+                                <button type="button" class="go-back">Go Back</button>
+                                <button class="confirm" type="submit">Confirm</button>
+                            </div>
                         </div>
+                    </form>
+                    <div class="thanku hidden">
+                        <img src="img/icon-thank-you.svg" alt="">
+                        <h3>Thank you!</h3>
+                        <p>Thanks for confirming your subscription! We hope have fun using out platform. If you ever need
+                            support, please feel free to email us at support@loremgaming.com</p>
                     </div>
-
-                    <div class="step hidden" id="summery">
-                        <h2 class="step-heading">Finish up</h2>
-                        <p class="step-text">Double-check everything looks OK before confirming</p>
-
-                        <div class="summery-details">
-                            <div class="plan">
-                                <div class="name" id="chosenPlanName">
-                                    Acrade (Monthly)
-                                    <br/><a href="#">Change</a>
-                                </div>
-                                <div class="price" id="chosenPlanPrice">
-                                    $9/mo
-                                </div>
-                            </div>
-                            <div class="addons-item">
-                                <div class="addons-name">
-                                    Online service
-                                </div>
-                                <div class="addons-price">
-                                    +$1/mo
-                                </div>
-                            </div>
-                            <div class="addons-item">
-                                <div class="addons-name">
-                                    Large Storage
-                                </div>
-                                <div class="addons-price">
-                                    +$2/mo
-                                </div>
-                            </div>
-                        </div>
-                        <div class="summery-total">
-                            <div class="leading">Total <span>(per month)</span></div>
-                            <div id="totalPrice" class="total-price">+$12/mo</div>
-                        </div>
-                        <div class="buttons-wrap">
-                            <button type="button" class="go-back">Go Back</button>
-                            <button class="confirm" type="submit">Confirm</button>
-                        </div>
-                    </div>
-                </form>
-
-                <div class="thanku">
-                    <img src="img/icon-thank-you.svg" alt="">
-                    <h3>Thank you!</h3>
-                    <p>Thanks for confirming your subscription! We hope have fun using out platform. If you ever need support, please feel free to email us at support@loremgaming.com</p>
                 </div>
+
+                
             </div>
             <!-- form side end -->
         </div>
+        <!-- Desktop wrap end -->
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/zod@3.23.8/lib/index.umd.min.js"></script>
     <script src="js/script.js"></script>
 </body>
+
 </html>

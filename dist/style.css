@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: hsl(217, 100%, 97%);
   font-family: "Ubuntu";
@@ -11,7 +15,7 @@ main {
   align-items: center;
 }
 
-.wrap {
+.desktop-wrap {
   background: #fff;
   padding: 0.5rem;
   display: flex;
@@ -26,6 +30,10 @@ main {
   background-size: cover;
   border-radius: 10px;
 }
+.side .steps-list {
+  display: flex;
+  flex-direction: column;
+}
 .side .steps-list .step-item {
   display: flex;
   color: #fff;
@@ -37,8 +45,9 @@ main {
   padding: 0.5rem 0.8rem;
   border-radius: 50%;
   border: 1px solid hsl(206, 94%, 87%);
+  font-weight: 700;
 }
-.side .steps-list .step-item .number.active {
+.side .steps-list .step-item.active .number {
   background: hsl(206, 94%, 87%);
   color: hsl(213, 96%, 18%);
 }
@@ -62,6 +71,7 @@ main {
   margin-bottom: 3rem;
 }
 .form-wrap .form-group {
+  position: relative;
   margin-bottom: 1rem;
 }
 .form-wrap .form-group label {
@@ -74,9 +84,9 @@ main {
   width: 100%;
   padding: 0.8rem;
   border: 1px solid hsl(229, 24%, 87%);
-  border-radius: 7px;
+  border-radius: 5px;
   color: hsl(213, 96%, 18%);
-  font-weight: 500;
+  font-weight: 700;
 }
 .form-wrap .form-group input:focus {
   outline: none;
@@ -85,7 +95,10 @@ main {
 .form-wrap .form-group input.invalid {
   border: 1px solid hsl(354, 84%, 57%);
 }
-.form-wrap .form-group .error {
+.form-wrap .form-group .error-msg {
+  position: absolute;
+  right: 30px;
+  top: 0;
   font-size: 12px;
   color: hsl(354, 84%, 57%);
   float: right;
@@ -94,15 +107,25 @@ main {
 .form-wrap .radio-group {
   display: flex;
   gap: 20px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.form-wrap .radio-group .error-msg {
+  color: hsl(354, 84%, 57%);
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  top: 0;
+  right: 0;
 }
 .form-wrap .radio-group label {
   display: block;
   border: 1px solid hsl(229, 24%, 87%);
-  width: 100px;
+  flex-grow: 1/3;
+  min-width: 120px;
   padding: 1rem;
   border-radius: 10px;
-  height: 120px;
+  height: 200px;
 }
 .form-wrap .radio-group label .radio-item {
   display: flex;
@@ -110,14 +133,20 @@ main {
   justify-content: space-between;
   height: 100%;
   color: hsl(231, 11%, 63%);
+  font-size: 0.9rem;
 }
 .form-wrap .radio-group label .radio-item img {
   width: 40px;
 }
 .form-wrap .radio-group label .radio-item h6 {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: hsl(213, 96%, 18%);
   margin-bottom: 5px;
+}
+.form-wrap .radio-group label .radio-item .free-triel {
+  color: hsl(213, 96%, 18%);
+  font-size: 0.8rem;
+  margin-top: 5px;
 }
 .form-wrap .radio-group input[type=radio] {
   appearance: none;
@@ -131,39 +160,59 @@ main {
 }
 .form-wrap .switch-group {
   background: hsl(217, 100%, 97%);
-  padding: 1.2rem;
+  padding: 1rem;
   text-align: center;
+  align-items: center;
+  position: relative;
+}
+.form-wrap .switch-group label {
   display: flex;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 0.8rem;
+  position: relative;
+}
+.form-wrap .switch-group label .switch-text {
+  font-weight: bold;
   color: hsl(213, 96%, 18%);
-  font-weight: 500;
+}
+.form-wrap .switch-group label .switch-text.yearly {
+  color: hsl(231, 11%, 63%);
+}
+.form-wrap .switch-group label .switch-inner {
+  font-size: 1rem;
+  font-weight: bold;
+}
+.form-wrap .switch-group label .switch-slider {
+  background: hsl(213, 96%, 18%);
+  width: 3rem;
+  height: 1.4rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.form-wrap .switch-group label .switch-slider-inner {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  border: 1px solid hsl(213, 96%, 18%);
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.3s ease-in;
 }
 .form-wrap .switch-group input[type=checkbox] {
   appearance: none;
 }
-.form-wrap .switch-group input[type=checkbox]:checked + .slider .slider-inner {
-  transform: translateX(1rem);
+.form-wrap .switch-group input[type=checkbox]:checked + label .switch-slider-inner {
+  transform: translateX(1.5rem);
 }
-.form-wrap .switch-group .slider {
-  display: block;
-  position: relative;
-  width: 2.5rem;
-  height: 1.5rem;
-  background: hsl(213, 96%, 18%);
-  border: hsl(213, 96%, 18%);
-  border-radius: 12px;
-  margin: 0 1rem;
+.form-wrap .switch-group input[type=checkbox]:checked + label .switch-text.monthly {
+  color: hsl(231, 11%, 63%);
 }
-.form-wrap .switch-group .slider .slider-inner {
-  display: inline-block;
-  position: absolute;
-  left: 3px;
-  top: 4px;
-  width: 1rem;
-  height: 1rem;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: transform 0.3s ease;
+.form-wrap .switch-group input[type=checkbox]:checked + label .switch-text.yearly {
+  color: hsl(213, 96%, 18%);
 }
 .form-wrap .check-group {
   display: flex;
@@ -176,7 +225,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid hsl(231, 11%, 63%);
+  border: 1px solid hsl(229, 24%, 87%);
   border-radius: 10px;
   padding: 1rem;
 }
@@ -208,11 +257,10 @@ main {
   width: 100%;
   margin-top: 4rem;
   display: flex;
-  justify-content: space-between;
 }
 .form-wrap .buttons-wrap button.next-step {
   background: hsl(213, 94%, 27%);
-  color: #fff;
+  color: hsl(206, 94%, 87%);
   border: none;
   border-radius: 10px;
   padding: 1rem 1.5rem;
@@ -223,9 +271,12 @@ main {
   background: transparent;
   border: none;
   font-weight: bold;
-  color: hsl(213, 96%, 18%);
+  color: hsl(231, 11%, 63%);
   font-size: 1rem;
   cursor: pointer;
+}
+.form-wrap .buttons-wrap button.go-back:hover {
+  color: hsl(213, 96%, 18%);
 }
 .form-wrap .buttons-wrap button.confirm {
   background-color: hsl(243, 100%, 62%);
@@ -294,6 +345,82 @@ main {
 }
 
 /**  @media queries */
+@media (max-width: 576px) {
+  main {
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+  .desktop-wrap {
+    padding: 0;
+    border-radius: 0;
+    display: block;
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .side {
+    background: url("/img/bg-sidebar-mobile.svg") no-repeat center/cover;
+    width: 100%;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 180px;
+  }
+  .side .steps-list {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .side .steps-list .step-item .text {
+    display: none;
+  }
+  .form-wrap {
+    background: transparent;
+    padding: 0;
+  }
+  .form-wrap .form {
+    padding: 2rem 1.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    background: #fff;
+    position: absolute;
+    top: 90px;
+    left: 5%;
+    right: 5%;
+    border-radius: 10px;
+  }
+  .form-wrap .form .form-group input {
+    width: 92%;
+  }
+  .form-wrap .buttons-wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    padding: 2rem;
+  }
+  .form-wrap .radio-group {
+    flex-direction: column;
+    gap: 3px;
+  }
+  .form-wrap .radio-group label {
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+  }
+  .form-wrap .radio-group label .radio-item {
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+  }
+  .form-wrap .radio-group label .radio-item h6 {
+    margin: 5px 0;
+  }
+}
 /*  @utility  */
 .hidden {
   display: none;
@@ -301,6 +428,14 @@ main {
 
 .visible {
   display: block;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-end {
+  justify-content: end;
 }
 
 /*# sourceMappingURL=style.css.map */
