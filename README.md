@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [repo](https://github.com/Salma-3/multi-step-form.git)
-- Live Site URL: [demo](https://your-live-site-url.com)
+- Live Site URL: [demo](https://salma-3.github.io/multi-step-form/)
 
 ## My process
 
@@ -54,7 +54,7 @@ Users should be able to:
 ### What I learned
 
 I used this challenge to practice my CSS knowledge, so i didn't use any css libraries, only sass preprocessor to organize the style file better.
-It's so handlful to use some ready library components in big projects, but I think its better to implement from scratch them in challenges like this one.
+It's so handlful to use some ready library components in big projects, but I think its better to implement from scratch in challenges like this one.
 Here is a part of the form, where i implement switch toggle
 
 HTML:
