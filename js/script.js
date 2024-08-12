@@ -78,8 +78,12 @@ function setSummeryHtml() {
     summeryDetails.innerHTML = planHtml + addonsHtmlItems.join(' ');
 
     const summery = document.getElementById('summery')
-    summery.append(summeryDetails)
-    summery.append(totalElement)
+    const buttonsWrap = document.getElementsByClassName('buttons-wrap')[3]
+
+    summery.insertBefore(summeryDetails,buttonsWrap)
+    summery.insertBefore(totalElement, buttonsWrap)
+
+
 }
 
 
